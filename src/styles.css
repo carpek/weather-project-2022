@@ -1,89 +1,88 @@
 body {
-    font-family: "Poppins", sans-serif;
-    background: linear-gradient(
-      180.3deg,
-      rgb(221, 221, 221) 5.5%,
-      rgb(110, 136, 161) 90.2%
-    );
-    text-align: center;
-    text-shadow: 5px 5px 10px rgba(22, 22, 22, 0.4);
-  }
-  
-  h1 {
-    font-family: "Roboto Mono", monospace;
-  }
-  
-  .cityBackground {
-    font-size: 40px;
-    color: lightgray;
-    padding-top: 30px;
-  }
-  
-  .weatherToday {
-    font-size: 40px;
-    color: gray;
-    text-decoration: none;
-    list-style: none;
-  }
-  
-  .weatherCity {
-    padding-top: 30px;
-    text-align: center;
-  }
-  
-  .weatherForecast {
-    color: #455d7a;
-    font-size: 20px;
-    text-align: center;
-    list-style: none;
-    text-decoration: none;
-    border: 1px solid;
-    border-radius: 20px;
-    transition: all 200ms ease-in-out;
-  }
-  
-  .weatherForecast:hover {
-    background-color: lightgray;
-  }
-  
-  .iconWeather {
-    font-size: 20px;
-    text-align: center;
-  }
-  
-  .formControl {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(
+    180.3deg,
+    rgb(221, 221, 221) 5.5%,
+    rgb(110, 136, 161) 90.2%
+  );
+  text-align: center;
+  text-shadow: 5px 5px 10px rgba(22, 22, 22, 0.4);
+}
+
+h1 {
+  font-family: "Roboto Mono", monospace;
+}
+
+.cityBackground {
+  font-size: 40px;
+  color: lightgray;
+  padding-top: 30px;
+}
+
+.weatherToday {
+  font-size: 40px;
+  color: gray;
+  text-decoration: none;
+  list-style: none;
+}
+
+.weatherCity {
+  padding-top: 30px;
+  text-align: center;
+}
+
+.weatherForecast {
+  color: #455d7a;
+  font-size: 20px;
+  text-align: center;
+  list-style: none;
+  text-decoration: none;
+  border: 1px solid;
+  border-radius: 20px;
+  transition: all 200ms ease-in-out;
+}
+
+.weatherForecast:hover {
+  background-color: lightgray;
+}
+
+.iconWeather {
+  font-size: 20px;
+  text-align: center;
+}
+
+.formControl {
 width: 30%;
 border: 1px solid;
 border-radius: 8px;
 padding: 9px;
 }
 
-  .searchLabel {
-    font-size: 20px;
-    text-align: center;
-    margin: 10px;
-    font-family: "Roboto Mono", monospace;
-  }
-  
-  .searchButton {
-    font-size: 20px;
-    text-align: center;
-    margin: 10px;
-  }
+.searchLabel {
+  font-size: 20px;
+  text-align: center;
+  margin: 10px;
+  font-family: "Roboto Mono", monospace;
+}
 
- a, a:visited {
-  text-decoration: underline;
-  color: gray;
+.searchButton {
+  font-size: 20px;
+  text-align: center;
+  margin: 10px;
+}
+
+a, a:visited {
+text-decoration: underline;
+color: gray;
 }
 
 a:hover  {
-    text-decoration: none;
-    color: lightgray;
-  }
+  text-decoration: none;
+  color: lightgray;
+}
 
-  .footer {
-    font-size: 15px;
-    text-align: center;
-    margin-top: 10px;
-  }
-  
+.footer {
+  font-size: 15px;
+  text-align: center;
+  margin-top: 10px;
+}
