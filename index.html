@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <link href="src/styles.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/cca590c85f.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"> 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<div class="container"> 
+
+
+<form>
+    <div class="form-group" id="search-enginge">
+      <label class="searchLabel"for="exampleInputEmail1">Check the weather in your city</label>
+      <input type="text" class="formControl" id="city-search-input" aria-describedby="emailHelp" placeholder="Enter city">
+    <button type="submit" class="btn btn-secondary searchButton">Search</button>
+</div>
+  </form>
+
+<h1 class="weatherCity" id="weather-city">Vienna</h1>
+<h2 id="current-date">  </h2>
+
+<ul>
+<li class="weatherToday">
+    <i class="fa-solid fa-cloud-rain"></i>
+</li>
+<li class="weatherToday">
+    <p id="current-day">Friday</p>
+    <p id="current-degrees">23 <a href="#" id="celcius-link">°C</a> / <a href="#" id="fahrenheit-link">°F  </a></p>
+</li>
+</ul>
+
+<div>
+<div class="row">
+    <div class="col-3 iconWeather">
+        <ul>           
+        <li class="weatherForecast">
+        <i class="fa-solid fa-cloud-rain"></i>
+       
+                <p>Saturday</p>
+                <p>26°C / 77°F</p>
+            </li>
+            </ul>
+    </div>
+
+    <div class="col-3 iconWeather">
+        <ul>
+        <li class="weatherForecast">
+        <i class="fa-solid fa-cloud-sun-rain"></i>
+            <p>Sunday</p>
+            <p>24°C / 75°F</p>
+        </li>
+        </ul>
+    </div>
+
+    <div class="col-3 iconWeather">
+        <ul>
+        <li class="weatherForecast">
+        <i class="fa-solid fa-cloud-rain"></i>
+            <p>Monday</p>
+            <p>21°C / 69°F</p>
+        </li>
+        </ul>
+
+    </div>
+    <div class="col-3 iconWeather">
+        <ul>
+        <li class="weatherForecast">
+        <i class="fa-solid fa-cloud-sun"></i>
+            <p>Tuesday</p>
+            <p>24°C / 75°F</p>
+        </li>
+        </ul>
+    </div>
+</div>
+
+
+</div>
+
+ 
+<footer class="footer">
+  <p>Coded by Lina Pek</p>  
+</footer>
+</div>
+    <script src="src/app.js"></script>
+</body>
+</html>
