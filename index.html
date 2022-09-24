@@ -15,17 +15,21 @@
 </head>
 <body>
 <div class="container"> 
-
-
+<div class="card mb-3">
+    <div class="row g-0">    
+    <div class="col-md-4 left-container">
 <form>
     <div class="form-group" id="search-enginge">
       <label class="searchLabel"for="exampleInputEmail1">Check the weather in your city</label>
+      <div class="search">
       <input type="text" class="formControl" id="example-input-city" aria-describedby="emailHelp" placeholder="Enter city">
    
    
     <button type="submit" class="btn btn-secondary searchButton">Search</button>
 </div>
-  </form>
+</div>
+</form>
+
 
 <h1 class="weatherCity" id="weather-city">Vienna</h1>
 <h2 id="current-date">  </h2>
@@ -39,10 +43,10 @@
     <p id="current-degrees">23 <a href="#" id="celcius-link">°C</a> / <a href="#" id="fahrenheit-link">°F  </a></p>
 </li>
 </ul>
-
-<div>
+</div>
+<div class="col-md-8 right container">
 <div class="row">
-    <div class="col-3 iconWeather">
+    <div class="col-sm iconWeather">
         <ul>           
         <li class="weatherForecast">
         <i class="fa-solid fa-cloud-rain"></i>
@@ -53,17 +57,17 @@
             </ul>
     </div>
 
-    <div class="col-3 iconWeather">
+    <div class="col-sm iconWeather">
         <ul>
         <li class="weatherForecast">
         <i class="fa-solid fa-cloud-sun-rain"></i>
-            <p>Sunday</p>
-            <p>24°C / 75°F</p>
+            <p>Sunday 24°C / 75°F</p>
+    
         </li>
         </ul>
     </div>
 
-    <div class="col-3 iconWeather">
+    <div class="col-sm iconWeather">
         <ul>
         <li class="weatherForecast">
         <i class="fa-solid fa-cloud-rain"></i>
@@ -87,11 +91,19 @@
 
 </div>
 
+
+
+
  
-<footer class="footer">
-  <p>Coded by Lina Pek</p>  
-</footer>
+
+
+
 </div>
+</div>
+</div>
+<footer class="footer">
+    <p>Coded by Lina Pek</p>  
+  </footer>
     <script src="src/app.js"></script>
 </body>
 </html>

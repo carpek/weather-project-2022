@@ -6,34 +6,49 @@ body {
     rgb(110, 136, 161) 90.2%
   );
   text-align: center;
-  text-shadow: 5px 5px 10px rgba(22, 22, 22, 0.4);
+  color: #455d7a;
+
 }
 
 h1 {
   font-family: "Roboto Mono", monospace;
 }
 
+.container {
+padding: 30px;
+margin: 0px auto;
+border: none;
+}
+
+.outerCard {
+  margin: 10px 5px;
+  padding: 30px;
+  background: linear-gradient(to top, #dfe9f3 0%, white 100%);
+  border-radius: 25px;
+}
+
 .cityBackground {
   font-size: 40px;
   color: lightgray;
-  padding-top: 30px;
+  margin-top: 30px;
 }
 
 .weatherToday {
   font-size: 40px;
-  color: gray;
+  color: #455d7a;
   text-decoration: none;
   list-style: none;
 }
 
 .weatherCity {
+  color: #455d7a;
   padding-top: 30px;
   text-align: center;
 }
 
 .weatherForecast {
   color: #455d7a;
-  font-size: 20px;
+  font-size: 16px;
   text-align: center;
   list-style: none;
   text-decoration: none;
@@ -47,8 +62,12 @@ h1 {
 }
 
 .iconWeather {
-  font-size: 20px;
+  font-size: 16px;
   text-align: center;
+}
+
+.search {
+display: block;
 }
 
 .formControl {
@@ -59,16 +78,19 @@ padding: 9px;
 }
 
 .searchLabel {
-  font-size: 20px;
+  font-size: 14px;
   text-align: center;
   margin: 10px;
   font-family: "Roboto Mono", monospace;
+  border-color: #455d7a;
 }
 
 .searchButton {
-  font-size: 20px;
+  font-size: 14px;
   text-align: center;
   margin: 10px;
+  border:none;
+  background-color: #455d7a
 }
 
 a, a:visited {
@@ -82,7 +104,7 @@ a:hover  {
 }
 
 .footer {
-  font-size: 15px;
+  font-size: 10px;
   text-align: center;
   margin-top: 10px;
 }
