@@ -1,20 +1,24 @@
 body {
   font-family: "Poppins", sans-serif;
   background-color: #bcdbdf;
-  
+  font-size: 16px;
   text-align: center;
   color: #235784;
 
 }
 
 h1, h5 {
-  font-family: "Roboto Mono", monospace;
+  font-size: 20px;
   color: #f7aa00;
-  padding: 5px;
+  padding: 15px;
+}
+
+.left-container {
+  padding: 8px;
 }
 
 .container {
-padding: 30px;
+padding: 40px;
 margin: 0px auto;
 border: none;
 }
@@ -28,7 +32,6 @@ box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
   padding: 30px;
   background: linear-gradient(to top, #dfe9f3 0%, white 100%);
   border-radius: 25px;
-  
 }
 
 .cityBackground {
@@ -38,13 +41,15 @@ box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .weatherToday {
-  font-size: 40px;
+  font-size: 30px;
+  line-height: 175%;
   color: #235784;
   text-decoration: none;
   list-style: none;
 }
 
 .weatherCity {
+  font-size: 40px;
   color: #235784;
   padding-top: 30px;
   text-align: center;
@@ -52,7 +57,8 @@ box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 
 .iconWeather {
   color: #235784;
-  font-size: 14px;
+  margin: 7px;
+  font-size: 12px;
   text-align: center;
   list-style: none;
   text-decoration: none;
@@ -61,10 +67,7 @@ box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
   transition: all 200ms ease-in-out;
 }
 
-
-
 .iconWeather {
-  font-size: 16px;
   text-align: center;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 }
@@ -117,7 +120,7 @@ a:hover  {
 
 
 .footer {
-  font-size: 10px;
+  font-size: 12px;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 2px;
 }

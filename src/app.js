@@ -59,8 +59,7 @@ currentDate.innerHTML =
   "." +
   minutes;
 
-let currentDay = document.querySelector("#current-day");
-currentDay.innerHTML = weekDay;
+
 
 let form = document.querySelector("form");
 form.addEventListener("submit", enterCity);
