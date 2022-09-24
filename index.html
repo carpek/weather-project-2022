@@ -16,78 +16,187 @@
 <body>
 <div class="container"> 
 <div class="card mb-3">
-    <div class="row g-0">    
-    <div class="col-md-4 left-container">
-<form>
+<div class="row g-0">    
+<div class="col-md-4 left-container">
+
+    <form>
     <div class="form-group" id="search-enginge">
-      <label class="searchLabel"for="exampleInputEmail1">Check the weather in your city</label>
+      <label class="searchLabel"for="exampleInputEmail1">Check the weather</label>
       <div class="search">
       <input type="text" class="formControl" id="example-input-city" aria-describedby="emailHelp" placeholder="Enter city">
-   
    
     <button type="submit" class="btn btn-secondary searchButton">Search</button>
 </div>
 </div>
-</form>
-
+    </form>
 
 <h1 class="weatherCity" id="weather-city">Vienna</h1>
 <h2 id="current-date">  </h2>
 
-<ul>
-<li class="weatherToday">
+<h3 class="weatherToday">
     <i class="fa-solid fa-cloud-rain"></i>
-</li>
-<li class="weatherToday">
+</h3>
+<h3 class="weatherToday">
     <p id="current-day">Friday</p>
     <p id="current-degrees">23 <a href="#" id="celcius-link">°C</a> / <a href="#" id="fahrenheit-link">°F  </a></p>
-</li>
-</ul>
-</div>
+</h3>
+
+    </div>
+
 <div class="col-md-8 right container">
 <div class="row">
-    <div class="col-sm iconWeather">
-        <ul>           
-        <li class="weatherForecast">
+    <h5>Today's weather details</h5>
+    <div class="col-sm ">
+        <div class="card iconWeather">
+            <div class="card-body">
+                   
+        <p class="weatherForecast">
         <i class="fa-solid fa-cloud-rain"></i>
        
-                <p>Saturday</p>
-                <p>26°C / 77°F</p>
-            </li>
-            </ul>
+                <p>Sunrise</p>
+                <p>06:00</p>
+        </p>
+           
+    </div>
+        </div>
     </div>
 
-    <div class="col-sm iconWeather">
-        <ul>
-        <li class="weatherForecast">
+    <div class="col-sm">
+        <div class="card card iconWeather">
+            <div class="card-body">
+        
+        <p class="weatherForecast">
         <i class="fa-solid fa-cloud-sun-rain"></i>
-            <p>Sunday 24°C / 75°F</p>
-    
-        </li>
-        </ul>
+        <p>Sunset</p>
+        <p>19:00</p>
+        </p>
+        
+    </div>
+    </div>
     </div>
 
-    <div class="col-sm iconWeather">
-        <ul>
-        <li class="weatherForecast">
+    <div class="col-sm">
+        <div class="card card iconWeather">
+            <div class="card-body">
+        
+        <p class="weatherForecast">
         <i class="fa-solid fa-cloud-rain"></i>
-            <p>Monday</p>
-            <p>21°C / 69°F</p>
-        </li>
-        </ul>
+        <p>RealFeel</p>
+        <p>24°C / 75°F</p>
+        </p>
+        
+    </div>
+        </div>
+    </div>
 
-    </div>
-    <div class="col-3 iconWeather">
-        <ul>
-        <li class="weatherForecast">
+    <div class="col-sm">
+        <div class="card iconWeather">
+            <div class="card-body">
+        
+        <p class="weatherForecast">
         <i class="fa-solid fa-cloud-sun"></i>
-            <p>Tuesday</p>
-            <p>24°C / 75°F</p>
-        </li>
-        </ul>
+        <p>Humidity</p>
+        <p>20%</p>
+        </p>
+        
     </div>
+        </div>
+    </div>
+
+    <div class="col-sm">
+        <div class="card iconWeather">
+            <div class="card-body">
+        
+        <p class="weatherForecast">
+        <i class="fa-solid fa-cloud-sun"></i>
+        <p>Wind</p>
+        <p>7 m/s</p>
+        </p>
+        
+    </div>
+        </div>
+    </div>
+
 </div>
 
+<div class="row">
+    <h5>This weeks preview</h5>
+    <div class="col-sm">
+        <div class="card iconWeather">
+        <div class="card-body">
+                   
+        <p class="weatherForecast">
+        <i class="fa-solid fa-cloud-rain"></i>
+       
+        <p class="card-title">Sunday</p>
+        <p class="card-text">26°C / 77°F</p>
+        </p>
+            
+        </div>
+    </div>       
+    </div>
+
+    <div class="col-sm">
+        <div class="card iconWeather">
+        <div class="card-body">
+                 
+        <p class="weatherForecast">
+        <i class="fa-solid fa-cloud-rain"></i>
+       
+        <p class="card-title">Sunday</p>
+        <p class="card-text">26°C / 77°F</p>
+        </p>
+            
+        </div>
+    </div>       
+    </div>
+
+    <div class="col-sm">
+        <div class="card iconWeather">
+        <div class="card-body">
+                   
+        <p class="weatherForecast">
+        <i class="fa-solid fa-cloud-rain"></i>
+       
+        <p class="card-title">Monday</p>
+        <p class="card-text">26°C / 77°F</p>
+        </p>
+            
+        </div>
+    </div>       
+    </div>
+
+    <div class="col-sm">
+        <div class="card iconWeather">
+        <div class="card-body">
+                  
+        <p class="weatherForecast">
+        <i class="fa-solid fa-cloud-rain"></i>
+       
+        <p class="card-title">Tuesday</p>
+        <p class="card-text">26°C / 77°F</p>
+        </p>
+            
+        </div>
+    </div>       
+    </div>
+
+    <div class="col-sm">
+        <div class="card iconWeather">
+        <div class="card-body">
+                   
+        <p class="weatherForecast">
+        <i class="fa-solid fa-cloud-rain"></i>
+       
+        <p class="card-title">Wednesday</p>
+        <p class="card-text">26°C / 77°F</p>
+        </p>
+            
+        </div>
+    </div>       
+    </div>
+
+</div>
 
 </div>
 

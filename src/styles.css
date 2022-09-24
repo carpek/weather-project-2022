@@ -1,17 +1,16 @@
 body {
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(
-    180.3deg,
-    rgb(221, 221, 221) 5.5%,
-    rgb(110, 136, 161) 90.2%
-  );
+  background-color: #bcdbdf;
+  
   text-align: center;
-  color: #455d7a;
+  color: #235784;
 
 }
 
-h1 {
+h1, h5 {
   font-family: "Roboto Mono", monospace;
+  color: #f7aa00;
+  padding: 5px;
 }
 
 .container {
@@ -20,35 +19,40 @@ margin: 0px auto;
 border: none;
 }
 
+.card {
+box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
 .outerCard {
   margin: 10px 5px;
   padding: 30px;
   background: linear-gradient(to top, #dfe9f3 0%, white 100%);
   border-radius: 25px;
+  
 }
 
 .cityBackground {
   font-size: 40px;
-  color: lightgray;
+  color: #bcdbdf;
   margin-top: 30px;
 }
 
 .weatherToday {
   font-size: 40px;
-  color: #455d7a;
+  color: #235784;
   text-decoration: none;
   list-style: none;
 }
 
 .weatherCity {
-  color: #455d7a;
+  color: #235784;
   padding-top: 30px;
   text-align: center;
 }
 
-.weatherForecast {
-  color: #455d7a;
-  font-size: 16px;
+.iconWeather {
+  color: #235784;
+  font-size: 14px;
   text-align: center;
   list-style: none;
   text-decoration: none;
@@ -57,13 +61,16 @@ border: none;
   transition: all 200ms ease-in-out;
 }
 
-.weatherForecast:hover {
-  background-color: lightgray;
-}
+
 
 .iconWeather {
   font-size: 16px;
   text-align: center;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.iconWeather:hover {
+background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
 }
 
 .search {
@@ -82,7 +89,7 @@ padding: 9px;
   text-align: center;
   margin: 10px;
   font-family: "Roboto Mono", monospace;
-  border-color: #455d7a;
+  border-color: #235784;
 }
 
 .searchButton {
@@ -90,18 +97,24 @@ padding: 9px;
   text-align: center;
   margin: 10px;
   border:none;
-  background-color: #455d7a
+  background-color: #235784;
+}
+
+.searchButton:hover {
+  background-color: #f7aa00;
 }
 
 a, a:visited {
 text-decoration: underline;
-color: gray;
+color: #40a8c4;
 }
 
 a:hover  {
   text-decoration: none;
-  color: lightgray;
+  color: #f7aa00;
 }
+
+
 
 .footer {
   font-size: 10px;
