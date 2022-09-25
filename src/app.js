@@ -1,14 +1,24 @@
-function enterCity(event) {
+//search
+
+function search(city) {
+  let apiKey = "bfc01845a820d4f79bd680fec76e9289";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showWeather);
+
+}
+
+function handleSubmit(event) {
   event.preventDefault();
-  let h1 = document.querySelector("#weather-city");
-  let input = document.querySelector("#example-input-city");
-  h1.innerHTML = input.value;
+let cityInputElement = document.querySelector("#input-city");
+search(cityInputElement.value);
 }
 
-function showTemperature(response) {
+search("Vienna");
+
+let form = document.querySelector("#form");
+form.addEventListener("submit", handleSubmit);
 
 
-}
 
 function showPosition(position) {
 let lat = position.coord.lat;
@@ -16,7 +26,7 @@ let lon = position.coord.lon;
 
 let apiKey = "bfc01845a820d4f79bd680fec76e9289";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
-axios.get(apiUrl).then(showTemperature);
+axios.get(apiUrl).then(showWeather);
 }
 
 navigator.geolocation.getCurrentPosition(showPosition);
@@ -24,7 +34,6 @@ navigator.geolocation.getCurrentPosition(showPosition);
 //Weather
 
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-let city = "Vienna";
 
 function showWeather(response) {
 
@@ -38,8 +47,7 @@ let weatherElement = document.querySelector("#weatherToday");
 weatherElement.innerHTML = response.data.weather[0].description;
 
 let iconElement = document.querySelector("#iconToday");
-let iconArray = response.data.weather[0].icon;
-iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${iconArray}@2x.png`);
+iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 
 let humidityElement = document.querySelector("#humidity");
 humidityElement.innerHTML = response.data.main.humidity;
@@ -127,8 +135,7 @@ currentDate.innerHTML =
 
 }
 
-let form = document.querySelector("form");
-form.addEventListener("submit", enterCity);
+
 
 // Celcius - Fahrenheit Calculation
 
