@@ -20,6 +20,15 @@ temperatureElement.innerHTML = Math.round(response.data.main.temp);
 let weatherElement = document.querySelector("#weatherToday");
 weatherElement.innerHTML = response.data.weather[0].description;
 
+let humidityElement = document.querySelector("#humidity");
+humidityElement.innerHTML = response.data.main.humidity;
+
+let windElement = document.querySelector("#windSpeed");
+windElement = response.data.wind.speed;
+
+let realTempElement = document.querySelector("#realFeel");
+realTempElement = response.data.main.feels_like;
+
 }
   
   axios.get(apiUrl).then(showWeather);
