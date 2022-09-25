@@ -5,6 +5,24 @@ function enterCity(event) {
   h1.innerHTML = input.value;
 }
 
+let apiKey = "bfc01845a820d4f79bd680fec76e9289";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Vienna&appid=${apiKey}&units=metric`;
+
+//Weather
+
+function showWeather(response) {
+let city = document.querySelector("#weather-city");
+city.innerHTML = response.data.name;
+
+let temperatureElement = document.querySelector("#current-degrees")
+temperatureElement.innerHTML = Math.round(response.data.main.temp);
+
+let weatherElement = document.querySelector("#weatherToday");
+weatherElement.innerHTML = response.data.weather[0].description;
+
+}
+  
+  axios.get(apiUrl).then(showWeather);
 // Date-Display
 let now = new Date();
 
@@ -58,8 +76,6 @@ currentDate.innerHTML =
   hours +
   "." +
   minutes;
-
-
 
 let form = document.querySelector("form");
 form.addEventListener("submit", enterCity);
