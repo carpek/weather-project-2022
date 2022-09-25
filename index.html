@@ -27,6 +27,7 @@
       <input type="text" class="formControl" id="example-input-city" aria-describedby="emailHelp" placeholder="Enter city">
    
     <button type="submit" class="btn btn-secondary searchButton">Search</button>
+    <button type="submit" class="btn btn-secondary searchButton">Current Location</button>
 </div>
 </div>
     </form>
@@ -34,13 +35,18 @@
 <h1 class="weatherCity" id="weather-city">Vienna</h1>
 
 <h3 class="weatherToday" id="weatherToday">
-    <i class="fa-solid fa-cloud-rain" id="iconToday"></i>
+    <img src="http://openweathermap.org/img/wn/10d@2x.png" id="iconToday" />
 </h3>
 <h3 class="weatherToday">
     <p id="current-date">Friday</p>
     <p id="current-degrees">23 </p>
     <a href="#" id="celcius-link">°C</a> / <a href="#" id="fahrenheit-link">°F  </a>
 </h3>
+
+<p>
+    Min. <span id="min-temp">5</span> °C <br />
+    Max. <span id="max-temp">10</span> °C
+</p>
 
     </div>
 
@@ -52,9 +58,9 @@
             <div class="card-body">
                    
         <p class="weatherForecast">
-        <i class="fa-solid fa-cloud-rain"></i>
+            <i class="fa-solid fa-sun"></i>
                 <p>Sunrise</p>
-                <p id="sunrise">06:00</p>
+                <p> <span id="sunrise"></span></p>
         </p>
            
     </div>
@@ -66,9 +72,8 @@
             <div class="card-body">
         
         <p class="weatherForecast">
-        <i class="fa-solid fa-cloud-sun-rain"></i>
-        <p>Sunset</p>
-        <p id="sunset">19:00</p>
+            <i class="fa-solid fa-cloud-moon"></i>        <p>Sunset</p>
+        <p> <span id="sunset"></span></p>
         </p>
         
     </div>
@@ -82,7 +87,7 @@
         <p class="weatherForecast">
         <i class="fa-solid fa-cloud-rain"></i>
         <p>RealFeel</p>
-        <p id="realFeel"></p>
+        <p> <span id="realFeel"></span> °C</p>
         </p>
         
     </div>
