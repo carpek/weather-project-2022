@@ -44,7 +44,7 @@ let forecastHtml = `
 
 
 let days = [ "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-days.forEach(function day) {
+days.forEach(function (day) {
   forecastHtml = forecastHtml + ` 
 <div class="col-sm">
         <div class="card iconWeather">
@@ -60,7 +60,7 @@ days.forEach(function day) {
         </div>
     </div>       
     </div>`;
-}; 
+}); 
 forecastHtml = forecastHtml + `</div>`;
 
 forecastElement.innerHTML = forecastHtml;
