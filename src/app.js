@@ -4,17 +4,15 @@ function search(city) {
   let apiKey = "bfc01845a820d4f79bd680fec76e9289";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeather);
-
 }
 
 function handleSubmit(event) {
   event.preventDefault();
 let cityInputElement = document.querySelector("#input-city");
 search(cityInputElement.value);
+
 }
 
-let form = document.querySelector("#form");
-form.addEventListener("submit", handleSubmit);
 
 
 // Current Position
@@ -28,7 +26,6 @@ axios.get(apiUrl).then(showWeather);
 }
 
 navigator.geolocation.getCurrentPosition(showPosition);
-
 
 // Weather Display
 // Current Weather
@@ -49,6 +46,8 @@ let sunsetElement = document.querySelector("#sunset");
 let minCelsius = document.querySelector("#min-temp");
 let maxCelsius = document.querySelector("#max-temp");
 let dateElement = document.querySelector("#current-date");
+
+celciusTemp = Math.round(response.data.main.temp);
 
 city.innerHTML = response.data.name;
 temperatureElement.innerHTML = Math.round(response.data.main.temp);
@@ -104,16 +103,14 @@ function forecast(response) {
   forecastElement.innerHTML = forecastHtml;
   
   }
-  
+
   function getForecast(coordinates) {
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
     let apiKey = "bfc01845a820d4f79bd680fec76e9289";
-  axios.get(apiUrl).then(forecast);
-  
+  axios.get(apiUrl).then(forecast); 
   }
 
 // Date-Display
-
 // Forcast-Days
 function formatDay(timestamp) {
 let date = new Date(timestamp * 1000);
@@ -130,7 +127,6 @@ let days = let days = [
 
 return day[days];
 }
-
 
 // Current weather day and time
 function formateDate(timestamp)  {
@@ -178,19 +174,22 @@ return `${weekDay}, ${day} ${months} ${hours}:${minutes} ${year}`;
 
 }
 
-
-
 // Celcius - Fahrenheit Calculation
 
 function fahrenheitCalculation(event) {
   event.preventDefault();
-  let currentTemperature = document.querySelector("#current-degrees");
-  let temperature = currentTemperature.innerHTML;
-  temperature = Number(temperature);
-  currentTemperature.innerHTML = Math.round((temperature * 9) / 5 + 32);
+  let temperatureElement = document.querySelector("#current-degrees");
+  let fahrenheitTemp = (celciusTemp * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+   
 }
+
+let celciusTemp = null;
 
 let fahrenheitTemperature = document.querySelector("#fahrenheit-link");
 fahrenheitTemperature.addEventListener("click", fahrenheitCalculation);
+
+let form = document.querySelector("#form");
+form.addEventListener("submit", handleSubmit);
 
 search("Vienna");
