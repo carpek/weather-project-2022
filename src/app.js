@@ -44,7 +44,24 @@ function formateDate(timestamp)  {
   return `${weekDay}, ${day} ${currentMonth} ${hours}:${minutes} ${year}`;
   
   }
-  
+
+// Sunshine
+function formateSun(timestamp)  {
+  let now = new Date(timestamp);
+
+  let hours = now.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = now.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  return `${hours}:${minutes}`;
+
+}
+
   // Forcast-Days
   function formatDay(timestamp) {
     let date = new Date(timestamp * 1000);
@@ -131,8 +148,8 @@ function forecast(response) {
     humidityElement.innerHTML = response.data.main.humidity;
     windElement.innerHTML = Math.round(response.data.wind.speed);
     realTempElement.innerHTML = Math.round(response.data.main.feels_like);
-    sunriseElement.innerHTML = response.data.sys.sunrise * 1000;
-    sunsetElement.innerHTML = response.data.sys.sunset * 1000;
+    sunriseElement.innerHTML = formateSun(response.data.sys.sunrise * 1000);
+    sunsetElement.innerHTML = formateSun(response.data.sys.sunset * 1000);
     minCelsius.innerHTML = Math.round(response.data.main.temp_min);
     maxCelsius.innerHTML = Math.round(response.data.main.temp_max);
     dateElement.innerHTML = formateDate(response.data.dt * 1000);
@@ -165,7 +182,6 @@ let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coo
 function currentPosition(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
-  
   }
 
 // Celcius - Fahrenheit Calculation
