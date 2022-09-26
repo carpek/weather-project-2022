@@ -31,8 +31,7 @@ axios.get(apiUrl).then(showWeather);
 
 navigator.geolocation.getCurrentPosition(showPosition);
 
-//Weather
-
+//Weather Forecast
 
 function forecast(response) {
 let forecast = response.data.daily;
@@ -71,7 +70,9 @@ function getForecast(coordinates) {
 axios.get(apiUrl).then(forecast);
 
 }
-  
+
+// Current Weather
+
 function showWeather(response) {
 
 let city = document.querySelector("#weather-city");
@@ -100,9 +101,6 @@ sunriseElement.innerHTML = response.data.sys.sunrise * 1000;
 
 let sunsetElement = document.querySelector("sunset");
 sunsetElement.innerHTML = response.data.sys.sunset * 1000;
-
-let celsiusTemperature = document.querySelector("#current-degrees");
-celsiusTemperature.innerHTML = response.data.main.temp;
   
 let minCelsius = document.querySelector("#min-temp");
 minCelsius.innerHTML = Math.round(response.data.main.temp_min);
@@ -113,9 +111,12 @@ maxCelsius.innerHTML = Math.round(response.data.main.temp_max);
 function getForecast(response.data.coord);
 
 }
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
-  axios.get(apiUrl).then(showWeather);
+let apiKey = "bfc01845a820d4f79bd680fec76e9289";  
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+axios.get(apiUrl).then(showWeather);
+
+
 // Date-Display
 
 function formatDay(timestamp) {
