@@ -156,13 +156,16 @@ search(cityInputElement.value);
 
 }
 
-function currentPosition(position) {
-  let lat = position.coord.lat;
-  let lon = position.coord.lon;
-  
-  let apiKey = "bfc01845a820d4f79bd680fec76e9289";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+function searchLocation(position) {
+let apiKey = "bfc01845a820d4f79bd680fec76e9289";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeather);
+}
+
+function currentPosition(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
+  
   }
 
 // Celcius - Fahrenheit Calculation
@@ -192,7 +195,9 @@ celciusTemperature.addEventListener("click", celciusCalculation);
 let form = document.querySelector("#form");
 form.addEventListener("submit", handleSubmit);
 
-let button = document.querySelector("#current-location");
-button.addEventListener("click", currentPosition);
+let locationButton = document.querySelector("#current-location");
+locationButton.addEventListener("click", currentPosition);
+
+navigator.geolocation.getCurrentPosition(currentPosition);
 
 search("Vienna");
