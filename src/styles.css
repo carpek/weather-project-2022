@@ -109,7 +109,7 @@ padding: 9px;
 }
 
 a, a:visited {
-text-decoration: underline;
+text-decoration: none;
 color: #40a8c4;
 }
 
@@ -118,6 +118,12 @@ a:hover  {
   color: #f7aa00;
 }
 
+.active {
+  border:1px solid #235784;
+  padding: 10px;
+  border-radius: 25%;
+
+}
 
 
 .footer {
