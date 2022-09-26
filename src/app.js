@@ -13,13 +13,11 @@ let cityInputElement = document.querySelector("#input-city");
 search(cityInputElement.value);
 }
 
-
-
 let form = document.querySelector("#form");
 form.addEventListener("submit", handleSubmit);
 
 
-
+// Current Position
 function showPosition(position) {
 let lat = position.coord.lat;
 let lon = position.coord.lon;
@@ -108,6 +106,9 @@ minCelsius.innerHTML = Math.round(response.data.main.temp_min);
 let maxCelsius = document.querySelector("#max-temp");
 maxCelsius.innerHTML = Math.round(response.data.main.temp_max);
 
+let dateElement = document.querySelector("#current-date");
+dateElement.innerHTML = formateDate(response.data.dt * 1000);
+
 function getForecast(response.data.coord);
 
 }
@@ -119,6 +120,7 @@ axios.get(apiUrl).then(showWeather);
 
 // Date-Display
 
+// Forcast-Days
 function formatDay(timestamp) {
 let date = new Date(timestamp * 1000);
 let day = date.getDay();
@@ -135,8 +137,10 @@ let days = let days = [
 return day[days];
 }
 
+
+// Current weather day and time
 function formateDate(timestamp)  {
-  
+ 
 let now = new Date(timestamp);
 
 let days = [
@@ -176,19 +180,7 @@ if (minutes < 10) {
 
 let year = now.getFullYear();
 
-let currentDate = document.querySelector("#current-date");
-currentDate.innerHTML =
-  weekDay +
-  ", " +
-  day +
-  "." +
-  currentMonth +
-  " " +
-  year +
-  ", " +
-  hours +
-  "." +
-  minutes;
+return `${weekDay}, ${day} ${months} ${hours}:${minutes} ${year}`;
 
 }
 
