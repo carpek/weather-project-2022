@@ -13,7 +13,7 @@ let cityInputElement = document.querySelector("#input-city");
 search(cityInputElement.value);
 }
 
-search("Vienna");
+
 
 let form = document.querySelector("#form");
 form.addEventListener("submit", handleSubmit);
@@ -34,6 +34,38 @@ navigator.geolocation.getCurrentPosition(showPosition);
 //Weather
 
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+function forecast() {
+
+let forecastElement = document.querySelector("#forecast");
+let forecastHtml = `
+<div class="row" >
+    <h5>This weeks preview</h5>`;
+
+
+let days = [ "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+days.forEach(function day) {
+  forecastHtml = forecastHtml + ` 
+<div class="col-sm">
+        <div class="card iconWeather">
+        <div class="card-body">
+                   
+        <p class="weatherForecast">
+        <i class="fa-solid fa-cloud-rain"></i>
+       
+        <p class="card-title">${day}</p>
+        <p class="card-text">26°C / 77°F</p>
+        </p>
+            
+        </div>
+    </div>       
+    </div>`;
+}; 
+forecastHtml = forecastHtml + `</div>`;
+
+forecastElement.innerHTML = forecastHtml;
+
+}
 
 function showWeather(response) {
 
@@ -149,3 +181,5 @@ function fahrenheitCalculation(event) {
 
 let fahrenheitTemperature = document.querySelector("#fahrenheit-link");
 fahrenheitTemperature.addEventListener("click", fahrenheitCalculation);
+
+search("Vienna");
