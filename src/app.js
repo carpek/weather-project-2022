@@ -181,13 +181,22 @@ function fahrenheitCalculation(event) {
   let temperatureElement = document.querySelector("#current-degrees");
   let fahrenheitTemp = (celciusTemp * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemp);
-   
+}
+
+function celciusCalculation (event) {
+  event.preventDefault();
+let temperatureElement = document.querySelector("#current-degrees");
+temperatureElement.innerHTML = celciusTemp;
 }
 
 let celciusTemp = null;
 
 let fahrenheitTemperature = document.querySelector("#fahrenheit-link");
 fahrenheitTemperature.addEventListener("click", fahrenheitCalculation);
+
+let celciusTemperature = document.querySelector("#celcius-link");
+celciusTemperature.addEventListener("click", celciusCalculation);
+
 
 let form = document.querySelector("#form");
 form.addEventListener("submit", handleSubmit);
