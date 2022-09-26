@@ -45,22 +45,7 @@ function formateDate(timestamp)  {
   
   }
 
-// Sunshine
-function formateSun(timestamp)  {
-  let now = new Date(timestamp);
 
-  let hours = now.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-  let minutes = now.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-
-  return `${hours}:${minutes}`;
-
-}
 
   // Forcast-Days
   function formatDay(timestamp) {
@@ -89,7 +74,7 @@ function forecast(response) {
   let forecastHtml = `<div class="row" >
       <h5>This weeks preview</h5>`;
   
-  forecast.forEach(function (forecastDay, index) {
+  forecast.forEach(function(forecastDay, index) {
     if (index < 6) {
     forecastHtml = forecastHtml + ` 
       <div class="col-sm">
@@ -119,6 +104,23 @@ function forecast(response) {
   axios.get(apiUrl).then(forecast); 
   }
 
+// Sunshine
+function formateSun(timestamp)  {
+  let now = new Date(timestamp);
+
+  let hours = now.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = now.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  return `${hours}:${minutes}`;
+
+}
+
 // Current Weather
   function showWeather(response) {
 
@@ -132,8 +134,8 @@ function forecast(response) {
     let realTempElement = document.querySelector("#realFeel");
     let sunriseElement = document.querySelector("#sunrise");
     let sunsetElement = document.querySelector("#sunset");
-    let minCelsius = document.querySelector("#min-temp");
-    let maxCelsius = document.querySelector("#max-temp");
+    let minCelsiusElement = document.querySelector("#min-temp");
+    let maxCelsiusElement = document.querySelector("#max-temp");
     let dateElement = document.querySelector("#current-date");
     
     celciusTemp = response.data.main.temp;
@@ -150,8 +152,8 @@ function forecast(response) {
     realTempElement.innerHTML = Math.round(response.data.main.feels_like);
     sunriseElement.innerHTML = formateSun(response.data.sys.sunrise * 1000);
     sunsetElement.innerHTML = formateSun(response.data.sys.sunset * 1000);
-    minCelsius.innerHTML = Math.round(response.data.main.temp_min);
-    maxCelsius.innerHTML = Math.round(response.data.main.temp_max);
+    minCelsiusElement.innerHTML = Math.round(response.data.main.temp_min);
+    maxCelsiusElement.innerHTML = Math.round(response.data.main.temp_max);
     dateElement.innerHTML = formateDate(response.data.dt * 1000);
     
     getForecast(response.data.coord);
