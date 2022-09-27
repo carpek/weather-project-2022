@@ -1,5 +1,5 @@
 // Date-Display
-// Current weather day and time
+  // Current weather day and time
 function formateDate(timestamp)  {
  
   let now = new Date(timestamp);
@@ -45,8 +45,6 @@ function formateDate(timestamp)  {
   
   }
 
-
-
   // Forcast-Days
   function formatDay(timestamp) {
     let date = new Date(timestamp * 1000);
@@ -64,19 +62,20 @@ function formateDate(timestamp)  {
     return day[days];
     }
 // Weather Display
-//Weather Forecast
+  //  Weather Forecast
 
 function forecast(response) {
   let forecast = response.data.daily;
-
+  
   let forecastElement = document.querySelector("#forecast");
+
+
+  let forecastHtml = `<div class="row"> `;
   
-  let forecastHtml = `<div class="row" >
-      <h5>This weeks preview</h5>`;
-  
-  forecast.forEach(function(forecastDay, index) {
+  forecast.forEach(function (forecastDay, index) {
     if (index < 6) {
     forecastHtml = forecastHtml + ` 
+    <h5>This weeks preview</h5>
       <div class="col-sm">
           <div class="card iconWeather">
           <div class="card-body">
