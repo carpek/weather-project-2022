@@ -67,33 +67,34 @@ function formateDate(timestamp)  {
 function forecast(response) {
   let forecast = response.data.daily;
   
-  let forecastElement = document.querySelector("#forecast");
+  let forecastElement = document.querySelector(`#forecast`);
 
-
-  let forecastHtml = `<div class="row"> `;
+  let forecastHTML = `<div class="row">`;
   
   forecast.forEach(function (forecastDay, index) {
-    if (index < 6) {
-    forecastHtml = forecastHtml + ` 
-    <h5>This weeks preview</h5>
-      <div class="col-sm">
-          <div class="card iconWeather">
+  if (index > 0 && index < 6) {
+    forecastHTML 
+    = forecastHTML + 
+  `<div class="col-sm">
+      <div class="card-body">
+        <div class="card text-center">${formatDay(forecastDay.dt)}
           <div class="card-body">
-          <p class="card-title">${formatDay(forecastDay.dt)}</p>
-  
-          <p class="weatherForecast">
-          <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="" width="40" />
+            <img 
+            src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" 
+            alt="forecast-icon" 
+            width="40%" 
+            id="forecast-icon" />
+          <p class="card-text weather-temp"> <span id="forecast-max-temp"> ${Math.round(forecastDay.temp.max)}°C </span> / 
+          <span id="forecast-min-temp"> ${Math.round(forecastDay.temp.min)} °C </span>
           </p>
-          <p class="card-text">${Math.round(forecastDay.temp.max)}°C / ${Math.round(forecastDay.temp.min)} °C</p>
-         
+          </div> 
           </div>
-          </div>       
-      </div>`;
+      </div>       
+    </div>`;
     }
   }); 
-  forecastHtml = forecastHtml + `</div>`;
-  
-  forecastElement.innerHTML = forecastHtml;
+  forecastHTML = forecastHTML + `</div>`; 
+  forecastElement.innerHTML = forecastHTML;
   
   }
 
